@@ -7,12 +7,20 @@ scaling_name = "minmaxscaler.pkl"
 model_name = "modellog.pkl"
 
 # Load scaling and model from locally stored pickle files
-with open(scaling_name, 'rb') as f:
-    _scaling = pickle.load(f)
+try:
+    with open(scaling_name, 'rb') as f:
+        _scaling = pickle.load(f)
+except Exception as e:
+    st.error(f"Error loading {scaling_name}: {e}")
+    st.stop()
 
-with open(model_name, 'rb') as f:
-    _model = pickle.load(f)
-
+try:
+    with open(model_name, 'rb') as f:
+        _model = pickle.load(f)
+except Exception as e:
+    st.error(f"Error loading {model_name}: {e}")
+    st.stop()
+    
 def prediction(Gender,Married,Dependents,Education,Self_Employed,Applicant_Income,Coapplicant_Income,
         LoanAmount,Loan_Amount_Term,Credit_History,Property_Area):
     # Encode categorical features
