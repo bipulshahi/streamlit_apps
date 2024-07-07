@@ -1,6 +1,5 @@
-numpy
-pandas
+numpy==2.0.0
 pickle
-scikit-learn
+scikit-learn==1.5.1
 streamlit
 wget
