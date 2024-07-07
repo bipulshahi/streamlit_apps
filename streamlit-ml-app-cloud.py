@@ -7,12 +7,14 @@ scaling_name = "minmaxscaler.pkl"
 model_name = "modellog.pkl"
 
 # Load scaling and model from locally stored pickle files
+'''
 try:
     with open(scaling_name, 'rb') as f:
         _scaling = pickle.load(f)
 except Exception as e:
     st.error(f"Error loading {scaling_name}: {e}")
     st.stop()
+'''
 
 try:
     with open(model_name, 'rb') as f:
