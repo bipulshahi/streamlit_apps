@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-import pickle
+import joblib
 
 # Paths to locally stored pickle files
 scaling_name = "minmaxscaler.joblib"
@@ -10,7 +10,7 @@ model_name = "modellog.joblib"
 
 try:
     with open(scaling_name, 'rb') as f:
-        _scaling = pickle.load(f)
+        _scaling = joblib.load(f)
 except Exception as e:
     st.error(f"Error loading {scaling_name}: {e}")
     st.stop()
@@ -18,7 +18,7 @@ except Exception as e:
 
 try:
     with open(model_name, 'rb') as f:
-        _model = pickle.load(f)
+        _model = joblib.load(f)
 except Exception as e:
     st.error(f"Error loading {model_name}: {e}")
     st.stop()
