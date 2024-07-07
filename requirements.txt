@@ -1,3 +1,3 @@
-pickle-mixin
+pickle5
 streamlit
 wget
