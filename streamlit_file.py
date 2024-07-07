@@ -11,6 +11,7 @@ import numpy as np
 import pandas as pd
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import LabelEncoder,MinMaxScaler
+import os
 
 raw_train = pd.read_csv('train_loan.csv')
 raw_test = pd.read_csv('test_loan.csv')
@@ -225,6 +226,17 @@ sklearn.__version__
 import joblib
 joblib.__version__
 
-joblib.dump(log,'modellog.joblib')
-joblib.dump(minmax,'minmaxscaler.joblib')
+# Paths to locally stored joblib files
+repo_dir = os.path.dirname(os.path.abspath(__file__))
+model_name = os.path.join(repo_dir, "modellog.joblib")
+scaler_name = os.path.join(repo_dir, "minmaxscaler.joblib")
+
+# Your model training and other code...
+
+# Save the model and scaler
+with open(model_name, 'wb') as f:
+    joblib.dump(log, f)
+
+with open(scaler_name, 'wb') as f:
+    joblib.dump(minmax, f)
 
