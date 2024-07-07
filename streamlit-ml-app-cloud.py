@@ -3,8 +3,8 @@ import numpy as np
 import pickle
 
 # Paths to locally stored pickle files
-scaling_name = "minmaxscaler.pkl"
-model_name = "modellog.pkl"
+scaling_name = "minmaxscaler.joblib"
+model_name = "modellog.joblib"
 
 # Load scaling and model from locally stored pickle files
 
