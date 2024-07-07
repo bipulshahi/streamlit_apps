@@ -46,8 +46,8 @@ def prediction(Gender,Married,Dependents,Education,Self_Employed,Applicant_Incom
     input_data = np.array([[gender, married, dependents, education, selfemployed, 
                             applicantincome_log, loanamount_log, loanamountterm_log, 
                             credithistory, propertyarea]])
-    input_data_scaled = _scaling.transform(input_data)
-    prediction = _model.predict(input_data_scaled)[0]
+    #input_data_scaled = _scaling.transform(input_data)
+    prediction = _model.predict(input_data)[0]
     #print(prediction)
     return prediction
 
