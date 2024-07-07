@@ -1,7 +1,7 @@
 import streamlit as st
 import numpy as np
 import pickle
-import wget
+#import wget
 
 
 scaling_file = "https://raw.githubusercontent.com/bipulshahi/streamlit_apps/main/minmaxscaler.pkl"
@@ -10,12 +10,12 @@ model_file = "https://raw.githubusercontent.com/bipulshahi/streamlit_apps/main/m
 scaling_name = "minmaxscaler.pkl"
 model_name = "modellog.pkl"
 
-wget.download(scaling_file)
-with open(scaling_name, 'rb') as f:
+#wget.download(scaling_file)
+with open(scaling_file, 'rb') as f:
     _scaling = pickle.load(f)
 
-wget.download(model_file)
-with open(model_name , 'rb') as f:
+#wget.download(model_file)
+with open(model_file , 'rb') as f:
     _model = pickle.load(f)
 
 def prediction(Gender,Married,Dependents,Education,Self_Employed,Applicant_Income,Coapplicant_Income,
