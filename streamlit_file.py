@@ -12,6 +12,7 @@ import pandas as pd
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import LabelEncoder,MinMaxScaler
 import os
+import streamlit as st
 
 raw_train = pd.read_csv('train_loan.csv')
 raw_test = pd.read_csv('test_loan.csv')
@@ -230,6 +231,8 @@ joblib.__version__
 repo_dir = os.path.dirname(os.path.abspath(__file__))
 model_name = os.path.join(repo_dir, "modellog.joblib")
 scaler_name = os.path.join(repo_dir, "minmaxscaler.joblib")
+
+st.text(repo_dir)
 
 # Your model training and other code...
 
