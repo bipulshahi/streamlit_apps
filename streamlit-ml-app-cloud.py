@@ -10,9 +10,11 @@ model_file = "https://raw.githubusercontent.com/bipulshahi/streamlit_apps/main/m
 scaling_name = "minmaxscaler.pkl"
 model_name = "modellog.pkl"
 
+'''
 wget.download(scaling_file)
 with open(scaling_name, 'rb') as f:
     _scaling = pickle.load(f)
+'''
 
 wget.download(model_file)
 with open(model_name , 'rb') as f:
